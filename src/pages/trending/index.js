@@ -17,11 +17,11 @@ const Trend = () => {
     });
 
     return (
-        <>
+        <div className='component-container'>
             {trend.data?.map((gif) => (
                 <Gif title={gif.title} url={gif.images.fixed_width.url} key={gif.id} />
             ))}
-        </>
+        </div>
     );
 };
 

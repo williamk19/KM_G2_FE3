@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import Seacrh from './pages/search/index';
 import Trend from './pages/trending/index';
-import React, {useState} from 'react';
 import Gif from './components/gif.component';
 import './App.css';
 
@@ -35,25 +35,28 @@ const App = () => {
     <>
       <Router>
         <div>
-          <nav>
-            <ul>
+          <nav className='bg-slate-400 py-5 px-3'>
+            <ul className='flex space-x-11'>
               <li>
-                <Link to="/search">Search</Link>
+                <h3 className='text-3xl'>GIFinder</h3>
               </li>
               <li>
-                <Link to="/trend">Trend</Link>
+                <Link to="/search" className='text-3xl'>Search</Link>
+              </li>
+              <li>
+                <Link to="/trend" className='text-3xl'>Trend</Link>
               </li>
             </ul>
           </nav>
-
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Switch>
             <Route path="/search">
               <Seacrh getData={getGifs} getSearch={searchbarChange} />
-              {gifs.data?.map((gif) => (
-                <Gif title={gif.title} url={gif.images.fixed_width.url} key={gif.id} />
-              ))}
+              <div className='component-container'>
+                {gifs.data?.map((gif) => (
+                  <Gif title={gif.title} url={gif.images.fixed_width.url} key={gif.id} />
+                ))}
+              </div>
+              
             </Route>
             <Route path="/trend">
               <Trend />

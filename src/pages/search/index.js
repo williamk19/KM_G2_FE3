@@ -1,10 +1,18 @@
 import React from 'react';
 
-const seacrh = ({getData, getSearch}) => {
+const seacrh = ({ getData, getSearch }) => {
     return (
         <>
-            <input type="search" name='searchbox' onChange={getSearch}/>
-            <input type="submit" value="SEARCH" onClick={getData}/>
+            <input
+                className='border-2 border-slate-600' 
+                type="search"
+                name='searchbox'
+                onChange={getSearch} />
+            <input
+                className='border-2 border-slate-600' 
+                type="submit" 
+                value="SEARCH" 
+                onClick={getData} />
         </>
     );
 };
