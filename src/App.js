@@ -38,7 +38,7 @@ const App = () => {
           <nav className='bg-slate-400 py-5 px-3'>
             <ul className='flex space-x-11'>
               <li>
-                <h3 className='text-3xl'>GIFinder</h3>
+                <h3 className='text-3xl'>Giphy-GIFinder</h3>
               </li>
               <li>
                 <Link to="/search" className='text-3xl'>Search</Link>
